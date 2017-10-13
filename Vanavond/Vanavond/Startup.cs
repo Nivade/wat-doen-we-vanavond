@@ -74,15 +74,17 @@ namespace Vanavond
             {
                 app.UseExceptionHandler("/Home/Error");
             }
+            
+            var options = new RewriteOptions()
+                .AddRedirectToHttps();
+
+            app.UseRewriter(options);
+
             app.UseForwardedHeaders(new ForwardedHeadersOptions
             {
                 RequireHeaderSymmetry = false,
                 ForwardedHeaders = ForwardedHeaders.XForwardedProto | ForwardedHeaders.XForwardedFor
             });
-            var options = new RewriteOptions()
-                .AddRedirectToHttps();
-
-            app.UseRewriter(options);
 
             app.UseStaticFiles();
 

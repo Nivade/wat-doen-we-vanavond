@@ -9,7 +9,7 @@ using Vanavond.Models;
 
 namespace Vanavond.Controllers
 {
-    [Authorize]
+    
     public class HomeController : Controller
     {
         public IActionResult Index()
