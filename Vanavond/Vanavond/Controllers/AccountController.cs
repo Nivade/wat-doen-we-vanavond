@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Vanavond.Models;
-using Vanavond.Models.View;
+using Vanavond.Models.AccountViewModels;
 using Vanavond.Services;
 
 namespace Vanavond.Controllers

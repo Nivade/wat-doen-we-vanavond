@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace Vanavond.Models.View
+namespace Vanavond.Models.AccountViewModels
 {
     public class ExternalLoginViewModel
     {
