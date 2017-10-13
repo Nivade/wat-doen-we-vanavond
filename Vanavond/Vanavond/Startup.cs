@@ -56,7 +56,7 @@ namespace Vanavond
             services.AddTransient<IEmailSender, EmailSender>();
 
             
-            services.Configure<MvcOptions>(options => { options.Filters.Add(new RequireHttpsAttribute()); });
+            
 
             services.AddMvc();
         }
