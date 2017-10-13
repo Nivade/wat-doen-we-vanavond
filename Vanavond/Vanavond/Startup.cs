@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Rewrite;
 using Microsoft.Extensions.Configuration;
@@ -73,7 +74,11 @@ namespace Vanavond
             {
                 app.UseExceptionHandler("/Home/Error");
             }
-
+            app.UseForwardedHeaders(new ForwardedHeadersOptions
+            {
+                RequireHeaderSymmetry = false,
+                ForwardedHeaders = ForwardedHeaders.XForwardedProto | ForwardedHeaders.XForwardedFor
+            });
             var options = new RewriteOptions()
                 .AddRedirectToHttps();
 
