@@ -37,14 +37,18 @@ namespace Vanavond
 
             services.AddAuthentication().AddGoogle(googleOptions =>
             {
-                googleOptions.ClientId = Configuration["Authentication:Google:ClientId"];
-                googleOptions.ClientSecret = Configuration["Authentication:Google:ClientSecret"];
+                googleOptions.ClientId = "695693058738-csr861imel5p1l6lbmadok1r02qem7pd.apps.googleusercontent.com";
+                googleOptions.ClientSecret = "-JgXudB4DzlD18PewgZwx5g7";
+                //googleOptions.ClientId = Configuration["Authentication:Google:ClientId"];
+                //googleOptions.ClientSecret = Configuration["Authentication:Google:ClientSecret"];
             });
 
             services.AddAuthentication().AddFacebook(facebookOptions =>
             {
-                facebookOptions.AppId = Configuration["Authentication:Facebook:ClientId"];
-                facebookOptions.AppSecret = Configuration["Authentication:Facebook:ClientSecret"];
+                facebookOptions.AppId = "1833419923557431";
+                facebookOptions.AppSecret = "a0327188b11443dbbcba76c3c7082988";
+                //facebookOptions.AppId = Configuration["Authentication:Facebook:ClientId"];
+                //facebookOptions.AppSecret = Configuration["Authentication:Facebook:ClientSecret"];
             });
 
             // Add application services.
