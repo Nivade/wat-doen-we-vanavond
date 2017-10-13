@@ -55,7 +55,7 @@ namespace Vanavond
             services.AddTransient<IEmailSender, EmailSender>();
 
             
-            //services.Configure<MvcOptions>(options => { options.Filters.Add(new RequireHttpsAttribute()); });
+            services.Configure<MvcOptions>(options => { options.Filters.Add(new RequireHttpsAttribute()); });
 
             services.AddMvc();
         }
@@ -74,7 +74,10 @@ namespace Vanavond
                 app.UseExceptionHandler("/Home/Error");
             }
 
-            
+            var options = new RewriteOptions()
+                .AddRedirectToHttps();
+
+            app.UseRewriter(options);
 
             app.UseStaticFiles();
 
