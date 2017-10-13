@@ -43,8 +43,8 @@ namespace Vanavond
 
             services.AddAuthentication().AddFacebook(facebookOptions =>
             {
-                facebookOptions.AppId = Configuration["Authentication:Facebook:AppId"];
-                facebookOptions.AppSecret = Configuration["Authentication:Facebook:AppSecret"];
+                facebookOptions.AppId = Configuration["Authentication:Facebook:ClientId"];
+                facebookOptions.AppSecret = Configuration["Authentication:Facebook:ClientSecret"];
             });
 
             // Add application services.
